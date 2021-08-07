@@ -1,0 +1,257 @@
+*{
+	font-family:Arial, Helvetica, Sans-serif;
+	color:black;
+	margin:auto;
+	
+	
+}
+
+html {
+	width:1024px;
+	height:auto;
+	border:3px solid #a1a1a1;
+
+
+}
+
+
+body {
+	
+	width:1024px; 
+	height:auto;
+	line-height:1.5;
+	background-color:#E5E5E5;
+	vertical-align:top;
+	
+}
+
+p {
+	margin-top:10px;
+	
+}
+
+a:hover {
+	
+	color:blue; 
+}
+
+header  {
+	border-bottom:3px solid #a1a1a1;
+	width:1024px;
+	height:130px;
+}
+	
+	
+nav 	{
+	background:#CCFFFF;
+	border-bottom:3px solid #a1a1a1;
+	width:1024px;
+	height:30px;
+	font-weight:bold;
+	text-align:center;
+	float:left;
+	padding-top:7px;
+}
+	
+	
+nav a {
+	
+	padding:25px;
+	text-decoration:none;
+}
+
+
+
+nav ul {
+	
+	list-style:none;
+}
+
+nav ul li {
+	float:left;
+	
+}
+
+
+
+#content {
+	width:1024px;
+	height:auto;
+	
+}	
+.sidebar {
+	margin-top:30px;
+	margin-left:30px;
+	width:300px;
+	height:auto;
+	float:left;
+	
+}
+
+
+.main {
+	width:650px;
+	height:auto;
+	float:right;
+	text-align:justify;
+	margin-top:30px;
+	padding-right:30px;
+	
+}
+
+.main ul li{
+	list-style-type:circle;
+	
+}
+
+.main aside {
+	float:right;
+	margin-left:20px;
+}
+
+#keyspons{
+	
+}
+
+.tek {width:180px; float:left; padding:10px;}
+.turkucity {width:150px; float:left; padding-left:50px;}
+.turkutour {width:110px; float:left; padding-left:80px;}
+
+
+figcaption {
+	font-family:Calibri;
+	font-size:0.95em;
+	font-weight:bold;
+	margin-top:-10px;
+	text-align:center;
+}	
+
+#sponsors {
+	text-align:center;
+	font-size:0.95em;
+	font-weight:bold;
+}
+
+.ruukki{width:180px; float:left; padding:10px; }
+.stx {width:150px; float:left; padding-left:50px;}
+.union {width:160px; float:left; padding-left:80px;}
+.tio {width:160px; float:left; padding-left:50px; padding-top:20px;}
+.association {width:200px; float:left; padding-left:30px; padding-top:20px;}
+
+.main  table{
+	border:none;
+	border-spacing:10px;
+	float:inherit;
+	padding:5px;
+}
+
+caption {
+	font-weight:bold;
+	font-style:italic;
+	text-decoration:underline;
+}
+
+
+#speaker p {
+	padding-right:10px;
+}
+
+.johan {	background:#B5FFE6;}
+.johan aside {width:110px; height:300px; float:left; margin:20px;}
+
+.markku {background:#B5FFE6;}
+.markku aside {width:110px; height:320px; float:left; margin:20px;}
+
+.yrjo {background:#B5FFE6;}
+.yrjo aside {width:110px; height:300px; float:left; margin:20px;}
+
+.mike {background:#B5FFE6;}
+.mike aside {width:110px; height:320px; float:left; margin:20px;}
+
+.kati {background:#B5FFE6;}
+.kati aside {width:110px; height:320px; float:left; margin:20px;}
+
+.hamburger {background:#66CCFF;}
+.hamburger aside {width:110px; height:320px; float:right; margin:20px;}
+.hamburger p{margin-left:10px;}
+
+.city {background:#66CCFF;}
+.city aside {width:110px; height:320px; float:right; margin:20px;}
+.city p{margin-left:10px;}
+
+.seura {background:#66CCFF;}
+.seura aside {width:110px; height:320px; float:right; margin:20px;}
+.seura p{margin-left:10px;}
+
+.radisson {background:#66CCFF;}
+.radisson aside {width:110px; height:320px; float:right; margin:20px;}
+.radisson p{margin-left:10px;}
+
+footer 
+	{
+	font-size:0.75em;
+	width:auto;
+}
+
+#footer_left {
+	border-top:3px solid #a1a1a1;
+	width:594px;
+	height:110px;
+	float:left;
+}
+
+.left {width:140px; float:left; padding:20px; text-align:center;}
+.middle {width:180px; float:inherit; padding:20px; text-align:center;}
+.right {width:160px; float:right; padding:17px; text-align:center;}
+
+
+
+#footer_right {
+	border-top:3px solid #a1a1a1;
+	width:430px;
+	height:110px;
+	float:right;
+		
+}
+
+.thumbnail {
+	float:left;
+	width:120px;
+	height:60px;
+	margin:10px;
+	padding-top:15px;
+}
+
+iframe {
+	 width:600px;
+	 height:350px;
+	 border:2px #0066FF solid;
+	
+}
+
+h1{display:none;}
+h2{display:none;}
+h3.first_heading{
+	background:#7696CB; 
+	font-family: Arial; 
+	font-weight:bold; 
+	font-size:1.8em; 
+	text-align:center;
+	color:#efefef; 
+	padding:3px;
+	text-shadow:2px 2px 4px black;
+	box-shadow:3px 3px 6px #202020;
+	}
+h4 {font-size:3em; font-family:Metroscript; text-decoration:underline; text-align:center; color:#1A4C80;}
+h5 {font-size:1em; font-weight:bold; color:black;}
+h6 {font-weight:bold; font-size:1em; text-transform:uppercase;}
+
+fieldset {
+	border-radius:8px;
+}
+
+legend {
+	background:#A3FFFF;
+	border:1px black solid ;
+	border-radius:8px;
+}

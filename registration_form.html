@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Registration</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+			<script>
+	function validateForm()
+	{
+	var regex = /^[a-zA-Z]*$/;
+	var address_regex = /^[0-9a-zA-Z]+$/;
+	var pno   = /^\d{10}$/;
+	var pnoc  =/^\+?([0-9]{3})\)?([0-9]{9})$/;
+	var pnoce  =/^\+?([0-9]{3})\)?([0-9]{9})?(ext [0-9]{2})$/;
+	var email_regex  =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if(document.reg_form.firstname.value=="")		
+			{
+				alert("Enter firstname");
+				document.reg_form.firstname.focus();
+				return false;
+			}
+		if(!regex.test(document.reg_form.firstname.value))
+			{
+				alert("plese enter text only in firstname");
+				document.reg_form.firstname.focus();
+				return false;
+			}
+		
+		if(document.reg_form.lastname.value=="")		
+			{
+				alert("please enter lastname");
+				document.reg_form.lastname.focus();
+				return false;
+			}
+		if(!regex.test(document.reg_form.lastname.value))
+			{
+				alert("plese enter text only in lastname");
+				document.reg_form.lastname.focus();
+				return false;
+			}
+		if(document.reg_form.organization.value=="")		
+			{
+				alert("Enter the name of an organization");
+				document.reg_form.organization.focus();
+				return false;
+			}
+		if(!regex.test(document.reg_form.organization.value))
+			{
+				alert("plese enter text only in organization");
+				document.reg_form.organization.focus();
+				return false;
+			}
+		if(!document.reg_form.position.value=="")		
+			{
+				/*alert("Enter name of position");
+				document.reg_form.position.focus();
+				return false;
+			}*/
+				if(!regex.test(document.reg_form.position.value))
+					{
+						alert("plese enter text only in position");
+						document.reg_form.position.focus();
+						return false;
+					}
+			}
+		if(document.reg_form.address1.value=="")		
+			{
+				alert("Enter address line1");
+				document.reg_form.address1.focus();
+				return false;
+			}
+		if(!address_regex.test(document.reg_form.address1.value))
+			{
+				alert("please enter only numbers and characters in address(line1)");
+				document.reg_form.address1.focus();
+				return false;
+			}
+		if(!document.reg_form.address2.value=="")
+		{
+			if(!address_regex.test(document.reg_form.address2.value))
+				{
+					alert("please enter only numbers and characters in address(line2)");
+					document.reg_form.address2.focus();
+					return false;
+				}
+		}
+		if(!document.reg_form.address3.value=="")
+			{
+				if(!address_regex.test(document.reg_form.address3.value))
+					{
+						alert("please enter only numbers and characters in address(line3)");
+						document.reg_form.address3.focus();
+						return false;
+					}
+			}
+		if(document.reg_form.city_state.value=="")		
+			{
+				alert("Enter city/state");
+				document.reg_form.city_state.focus();
+				return false;
+			}
+		if(!regex.test(document.reg_form.city_state.value))
+			{
+				alert("plese enter text only in city/state");
+				document.reg_form.city.focus();
+				return false;
+			}
+		if(!document.reg_form.mobile.value=="")
+			{
+				if(!pnoc.test(document.reg_form.mobile.value) && !pno.test(document.reg_form.mobile.value) && !pnoce.test(document.reg_form.mobile.value))
+					{
+						alert("phone no. not valid");
+						document.reg_form.mobile.focus();
+						return false;
+					}
+			}
+		if(document.reg_form.email.value=="")
+			{
+				alert("please enter email address");
+				document.reg_form.email.focus();
+				return false;
+			}
+		if(!email_regex.test(document.reg_form.email.value))
+			{
+				alert("email address not valid");
+				document.reg_form.email.focus();
+				return false;
+			}
+		return(true);
+		
+	}
+	</script> 
+	</head>
+		<body>
+			<header>
+				
+				<img src="images/header.png" height="130" width="1024" alt="header logo" usemap="#icee">
+				
+				<map name="icee">
+				<area shape="rect" coords="38,37,419,89" alt="icee" href="http://www.icee2012.fi">
+				<area shape="rect" coords="894,94,940,108" alt="icee" href="http://www.finland.fi">
+				</map>
+				
+			</header>
+		 
+			  <nav>
+				<!-- navigation menu -->
+				<ul>
+					<li><a title="Welcome" href="index.html">Welcome</a></li>
+					<li><a title="Venue" href="Venue.html">Venue</a></li>
+					<li><a title="Program" href="Program.html">Program</a></li>
+					<li><a title="Events" href="Events.html">Events</a></li>
+					<li><a title="to Authors" href="Authors.html">To Authors</a></li>
+					<li><a title="Registration" href="Registration.html">Registration</a></li>
+					<li><a title="Travel" href="Travel.html">Travel</a></li>
+					<li><a title="Organization" href="Organization.html">Organization</a></li>
+				</ul>
+			  </nav>
+		 
+		 <section id="content">
+				<h1>Hidden heading</h1>				
+				<section class="sidebar">
+					<!-- sidebar content -->
+					<h2>Hidden heading</h2>
+					
+					<img src="images/turunlinna.png" alt="turunlinna" width="270" height="400">
+				</section>
+		 
+			  <section class="main">
+				<!-- main page content -->
+					<h2 class="first_heading">Registration form</h2>
+					
+					<article>
+						<h2>Hidden heading</h2>
+						<p><b>INTERNATIONAL CONFERENCE ON ENGINEERING EDUCATION 2012</b><br>
+						TURKU, FINLAND</p>
+					
+					</article><br>			
+
+					<form action="thankyou.html" method="post" name="reg_form" onsubmit="return (validateForm())">
+					  <fieldset>
+						<legend>REGISTRATION FORM</legend>
+						<p>Welcome to the registraiton form of ICEE 2012 conference. The event will take place in Turku, Finland from July 30 to August3, 2012.</p>
+						<p>After you have completed this form you will be directed to a payment form administered by directly by iNEER. In order to insure that all relevent details are correct both in this registration form and in the payment database, you will be asked to fill some identification information in the iNEER form, too. We appreciate your co-operation.</p>
+						<p>The mandatory fields are marked with*. Please note that this form must be filled separately for each participant and accompanying person.</p><br>
+					 </fieldset>
+					 
+					 <fieldset>
+						  <legend>PERSONAL DETAILS</legend>
+						  <p>*Title</p>
+						  
+						  <label for="prof">Prof.</label><input type="radio" name="title" id="prof" value="prof" required>
+						  <label for="dr">Dr.</label><input type="radio" name="title" id="dr" value="dr">
+						  <label for="mr">Mr.</label><input type="radio" name="title" id="mr" value="mr">
+						  <label for="ms">Ms.</label><input type="radio" name="title" id="ms" value="ms"><br><br>
+			
+						<label for="firstname">*FirstName:</label><br> <input type="text" name="firstname" id="fname" value="" size="80" /><br>
+						<label for="lastname">*LastName:</label><br> <input type="text" name="lastname" id="lname" value="" size="80" /><br>
+						<label for="organization">*Organization:</label><br> <input type="text" name="organization" id="organization" value="" size="80" /><br> 
+						<label for="position">Position:</label><br> <input type="text" name="position" id="position" value="" size="80" /><br>
+						<label for="address1">*Address (line 1):</label><br> <input type="text" name="address1" id="address1" value="" size="80" /><br>
+						<label for="address2">Address (line 2):</label><br> <input type="text" name="address2" id="address2" value="" size="80" /><br>
+						<label for="address3">Address (line 3):</label><br> <input type="text" name="address3" id="address3" value="" size="80" /><br>
+						<label for="city">*City/State:</label><br> <input type="text" name="city_state" id="city_state" value="" size="80" /><br>
+						<label>*Country:</label><br>
+							<select name="country" id="country" required>
+								<option value="">Please select...</option>
+								<option value="Akrotiri">Akrotiri</option>
+								<option value="Albania">Albania</option>
+								<option value="Algeria">Algeria</option>
+								<option value="American Samoa">American Samoa</option>
+								<option value="Andorra">Andorra</option>
+								<option value="Angola">Angola</option>
+								<option value="Anguilla">Anguilla</option>
+								<option value="Antarctica">Antarctica</option>
+								<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+								<option value="Argentina">Argentina</option>
+								<option value="Armenia">Armenia</option>
+								<option value="Aruba">Aruba</option>
+								<option value="Ashmore and Cartier Islands">Ashmore and Cartier Islands</option>
+								<option value="Australia">Australia</option>
+								<option value="Austria">Austria</option>
+								<option value="Azerbaijan">Azerbaijan</option>
+								<option value="Bahamas, The">Bahamas, The</option>
+								<option value="Bahrain">Bahrain</option>
+								<option value="Bangladesh">Bangladesh</option>
+								<option value="Barbados">Barbados</option>
+								<option value="Bassas da India">Bassas da India</option>
+								<option value="Belarus">Belarus</option>
+								<option value="Belgium">Belgium</option>
+								<option value="Belize">Belize</option>
+								<option value="Benin">Benin</option>
+								<option value="Bermuda">Bermuda</option>
+								<option value="Bhutan">Bhutan</option>
+								<option value="Bolivia">Bolivia</option>
+								<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+								<option value="Botswana">Botswana</option>
+								<option value="Bouvet Island">Bouvet Island</option>
+								<option value="Brazil">Brazil</option>
+								<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+								<option value="British Virgin Islands">British Virgin Islands</option>
+								<option value="Brunei">Brunei</option>
+								<option value="Bulgaria">Bulgaria</option>
+								<option value="Burkina Faso">Burkina Faso</option>
+								<option value="Burma">Burma</option>
+								<option value="Burundi">Burundi</option>
+								<option value="Cambodia">Cambodia</option>
+								<option value="Cameroon">Cameroon</option>
+								<option value="Canada">Canada</option>
+								<option value="Cape Verde">Cape Verde</option>
+								<option value="Cayman Islands">Cayman Islands</option>
+								<option value="Central African Republic">Central African Republic</option>
+								<option value="Chad">Chad</option>
+								<option value="Chile">Chile</option>
+								<option value="China">China</option>
+								<option value="Christmas Island">Christmas Island</option>
+								<option value="Clipperton Island">Clipperton Island</option>
+								<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+								<option value="Colombia">Colombia</option>
+								<option value="Comoros">Comoros</option>
+								<option value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option>
+								<option value="Congo, Republic of the">Congo, Republic of the</option>
+								<option value="Cook Islands">Cook Islands</option>
+								<option value="Coral Sea Islands">Coral Sea Islands</option>
+								<option value="Costa Rica">Costa Rica</option>
+								<option value="Cote d'Ivoire">Cote d'Ivoire</option>
+								<option value="Croatia">Croatia</option>
+								<option value="Cuba">Cuba</option>
+								<option value="Cyprus">Cyprus</option>
+								<option value="Czech Republic">Czech Republic</option>
+								<option value="Denmark">Denmark</option>
+								<option value="Dhekelia">Dhekelia</option>
+								<option value="Djibouti">Djibouti</option>
+								<option value="Dominica">Dominica</option>
+								<option value="Dominican Republic">Dominican Republic</option>
+								<option value="Ecuador">Ecuador</option>
+								<option value="Egypt">Egypt</option>
+								<option value="El Salvador">El Salvador</option>
+								<option value="Equatorial Guinea">Equatorial Guinea</option>
+								<option value="Eritrea">Eritrea</option>
+								<option value="Estonia">Estonia</option>
+								<option value="Ethiopia">Ethiopia</option>
+								<option value="Europa Island">Europa Island</option>
+								<option value="Falkland Islands (Islas Malvinas)">Falkland Islands (Islas Malvinas)</option>
+								<option value="Faroe Islands">Faroe Islands</option>
+								<option value="Fiji">Fiji</option>
+								<option value="Finland">Finland</option>
+								<option value="France">France</option>
+								<option value="French Guiana">French Guiana</option>
+								<option value="French Polynesia">French Polynesia</option>
+								<option value="French Southern and Antarctic Lands">French Southern and Antarctic Lands</option>
+								<option value="Gabon">Gabon</option>
+								<option value="Gambia, The">Gambia, The</option>
+								<option value="Gaza Strip">Gaza Strip</option>
+								<option value="Georgia">Georgia</option>
+								<option value="Germany">Germany</option>
+								<option value="Ghana">Ghana</option>
+								<option value="Gibraltar">Gibraltar</option>
+								<option value="Glorioso Islands">Glorioso Islands</option>
+								<option value="Greece">Greece</option>
+								<option value="Greenland">Greenland</option>
+								<option value="Grenada">Grenada</option>
+								<option value="Guadeloupe">Guadeloupe</option>
+								<option value="Guam">Guam</option>
+								<option value="Guatemala">Guatemala</option>
+								<option value="Guernsey">Guernsey</option>
+								<option value="Guinea">Guinea</option>
+								<option value="Guinea-Bissau">Guinea-Bissau</option>
+								<option value="Guyana">Guyana</option>
+								<option value="Haiti">Haiti</option>
+								<option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+								<option value="Holy See (Vatican City)">Holy See (Vatican City)</option>
+								<option value="Honduras">Honduras</option>
+								<option value="Hong Kong">Hong Kong</option>
+								<option value="Hungary">Hungary</option>
+								<option value="Iceland">Iceland</option>
+								<option value="India">India</option>
+								<option value="Indonesia">Indonesia</option>
+								<option value="Iran">Iran</option>
+								<option value="Iraq">Iraq</option>
+								<option value="Ireland">Ireland</option>
+								<option value="Isle of Man">Isle of Man</option>
+								<option value="Israel">Israel</option>
+								<option value="Italy">Italy</option>
+								<option value="Jamaica">Jamaica</option>
+								<option value="Jan Mayen">Jan Mayen</option>
+								<option value="Japan">Japan</option>
+								<option value="Jersey">Jersey</option>
+								<option value="Jordan">Jordan</option>
+								<option value="Juan de Nova Island">Juan de Nova Island</option>
+								<option value="Kazakhstan">Kazakhstan</option>
+								<option value="Kenya">Kenya</option>
+								<option value="Kiribati">Kiribati</option>
+								<option value="Korea, North">Korea, North</option>
+								<option value="Korea, South">Korea, South</option>
+								<option value="Kuwait">Kuwait</option>
+								<option value="Kyrgyzstan">Kyrgyzstan</option>
+								<option value="Laos">Laos</option>
+								<option value="Latvia">Latvia</option>
+								<option value="Lebanon">Lebanon</option>
+								<option value="Lesotho">Lesotho</option>
+								<option value="Liberia">Liberia</option>
+								<option value="Libya">Libya</option>
+								<option value="Liechtenstein">Liechtenstein</option>
+								<option value="Lithuania">Lithuania</option>
+								<option value="Luxembourg">Luxembourg</option>
+								<option value="Macau">Macau</option>
+								<option value="Macedonia">Macedonia</option>
+								<option value="Madagascar">Madagascar</option>
+								<option value="Malawi">Malawi</option>
+								<option value="Malaysia">Malaysia</option>
+								<option value="Maldives">Maldives</option>
+								<option value="Mali">Mali</option>
+								<option value="Malta">Malta</option>
+								<option value="Marshall Islands">Marshall Islands</option>
+								<option value="Martinique">Martinique</option>
+								<option value="Mauritania">Mauritania</option>
+								<option value="Mauritius">Mauritius</option>
+								<option value="Mayotte">Mayotte</option>
+								<option value="Mexico">Mexico</option>
+								<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+								<option value="Moldova">Moldova</option>
+								<option value="Monaco">Monaco</option>
+								<option value="Mongolia">Mongolia</option>
+								<option value="Montserrat">Montserrat</option>
+								<option value="Morocco">Morocco</option>
+								<option value="Mozambique">Mozambique</option>
+								<option value="Namibia">Namibia</option>
+								<option value="Nauru">Nauru</option>
+								<option value="Navassa Island">Navassa Island</option>
+								<option value="Nepal">Nepal</option>
+								<option value="Netherlands">Netherlands</option>
+								<option value="Netherlands Antilles">Netherlands Antilles</option>
+								<option value="New Caledonia">New Caledonia</option>
+								<option value="New Zealand">New Zealand</option>
+								<option value="Nicaragua">Nicaragua</option>
+								<option value="Niger">Niger</option>
+								<option value="Nigeria">Nigeria</option>
+								<option value="Niue">Niue</option>
+								<option value="Norfolk Island">Norfolk Island</option>
+								<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+								<option value="Norway">Norway</option>
+								<option value="Oman">Oman</option>
+								<option value="Pakistan">Pakistan</option>
+								<option value="Palau">Palau</option>
+								<option value="Panama">Panama</option>
+								<option value="Papua New Guinea">Papua New Guinea</option>
+								<option value="Paracel Islands">Paracel Islands</option>
+								<option value="Paraguay">Paraguay</option>
+								<option value="Peru">Peru</option>
+								<option value="Philippines">Philippines</option>
+								<option value="Pitcairn Islands">Pitcairn Islands</option>
+								<option value="Poland">Poland</option>
+								<option value="Portugal">Portugal</option>
+								<option value="Puerto Rico">Puerto Rico</option>
+								<option value="Qatar">Qatar</option>
+								<option value="Reunion">Reunion</option>
+								<option value="Romania">Romania</option>
+								<option value="Russia">Russia</option>
+								<option value="Rwanda">Rwanda</option>
+								<option value="Saint Helena">Saint Helena</option>
+								<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+								<option value="Saint Lucia">Saint Lucia</option>
+								<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+								<option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+								<option value="Samoa">Samoa</option>
+								<option value="San Marino">San Marino</option>
+								<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+								<option value="Saudi Arabia">Saudi Arabia</option>
+								<option value="Senegal">Senegal</option>
+								<option value="Serbia and Montenegro">Serbia and Montenegro</option>
+								<option value="Seychelles">Seychelles</option>
+								<option value="Sierra Leone">Sierra Leone</option>
+								<option value="Singapore">Singapore</option>
+								<option value="Slovakia">Slovakia</option>
+								<option value="Slovenia">Slovenia</option>
+								<option value="Solomon Islands">Solomon Islands</option>
+								<option value="Somalia">Somalia</option>
+								<option value="South Africa">South Africa</option>
+								<option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+								<option value="Spain">Spain</option>
+								<option value="Spratly Islands">Spratly Islands</option>
+								<option value="Sri Lanka">Sri Lanka</option>
+								<option value="Sudan">Sudan</option>
+								<option value="Suriname">Suriname</option>
+								<option value="Svalbard">Svalbard</option>
+								<option value="Swaziland">Swaziland</option>
+								<option value="Sweden">Sweden</option>
+								<option value="Switzerland">Switzerland</option>
+								<option value="Syria">Syria</option>
+								<option value="Taiwan">Taiwan</option>
+								<option value="Tajikistan">Tajikistan</option>
+								<option value="Tanzania">Tanzania</option>
+								<option value="Thailand">Thailand</option>
+								<option value="Timor-Leste">Timor-Leste</option>
+								<option value="Togo">Togo</option>
+								<option value="Tokelau">Tokelau</option>
+								<option value="Tonga">Tonga</option>
+								<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+								<option value="Tromelin Island">Tromelin Island</option>
+								<option value="Tunisia">Tunisia</option>
+								<option value="Turkey">Turkey</option>
+								<option value="Turkmenistan">Turkmenistan</option>
+								<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+								<option value="Tuvalu">Tuvalu</option>
+								<option value="Uganda">Uganda</option>
+								<option value="Ukraine">Ukraine</option>
+								<option value="United Arab Emirates">United Arab Emirates</option>
+								<option value="United Kingdom">United Kingdom</option>
+								<option value="United States">United States</option>
+								<option value="Uruguay">Uruguay</option>
+								<option value="Uzbekistan">Uzbekistan</option>
+								<option value="Wake Island">Wake Island</option>
+								<option value="Wallis and Futuna">Wallis and Futuna</option>
+								<option value="Vanuatu">Vanuatu</option>
+								<option value="Venezuela">Venezuela</option>
+								<option value="West Bank">West Bank</option>
+								<option value="Western Sahara">Western Sahara</option>
+								<option value="Vietnam">Vietnam</option>
+								<option value="Virgin Islands">Virgin Islands</option>
+								<option value="Yemen">Yemen</option>
+								<option value="Zambia">Zambia</option>
+								<option value="Zimbabwe">Zimbabwe</option>
+								<option value="other">Other</option>
+							 </select><br>
+						<label for="mobile">(Mobile) phone:</label><br> <input type="text" name="mobile" id="mobile" placeholder="+358501234567 or +358501234567 ext 23" value="" size="80" /><br>
+						<label for="email">*Email address:</label><br> <input type="email" name="email" id="email" placeholder="Please, input a valid email..." value="" size="80" /><br>
+						<label for="comments">Dietary requirements:</label><br> <textarea name="comments" id="comments" cols="80" rows="5"></textarea><br>
+						<label for="accom_name">Accompanying person's name:</label><br> <input type="text" name="accom_name" id="accom_name" value="" size="80" /><br>
+						<label>My contact details can be included on the list of participants:</label><br>	
+							<select name="cont_detail" id="cont_detail">
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select><br>
+						
+					 </fieldset>
+					 
+					 
+					 <fieldset>
+						<legend>REGISTRATION TYPE</legend>
+							<select name="reg_type" id="regtype">
+								<option value="full_delegate">Full delegate</option>
+								<option value="half_delegate">Half delegate</option>
+								<option value="student_delegate">Student delegate</option>
+							</select><br>
+						<p>Note: <br>
+						If you would like to attend as as day delegate on more than one day, please contact <a href="mailto:info@icee2012.fi">info@icee2012.fi</a></p>
+						<p>If you select the student delegate type, please email proof of student status (a scanned copy of international student card, for example) to <a href="mailto:info@icee2012.fi">info@icee2012.fi</a></p><br>
+					 </fieldset>
+					 
+					 <fieldset>
+						 <legend>CATERING AND SOCIAL EVENTS</legend>
+						 <p>
+						 <b>Catering</b><br>
+						 Please  confirm the days that you will attend the conference and require catering: 
+						 </p><br>
+						 <label for="tuesday">Tuesday</label><input type="checkbox" name="day" id="tuesday" value="tuesday" />
+						 <label for="wednesday">Wednesday</label><input type="checkbox" name="day" id="wednesday" value="tuesday" />
+						 <label for="thursday">Thursday</label><input type="checkbox" name="day" id="thursday" value="thursday" />
+						 <label for="friday">Friday</label><input type="checkbox" name="day" id="friday" value="friday" />
+						 
+						 <p>
+						 <b>Social Events</b><br>
+						 Please  select the relevant evening function(s) you wish to attend. Please note that  these social events are included in the full delegate and accompanying person registration fees only. 
+						 </p><br>
+						 
+						 <input type="checkbox" name="event" id="get_event" value="get_evnet"><label for="get_event"> Get-together event (Monday, July 30)</label><br>
+						 <input type="checkbox" name="event" id="welcome_recp" value="welcome_recp"><label for="welcome_recp"> Welcome Reception (Tuesday, July 31)</label><br>
+						 <input type="checkbox" name="event" id="gala_dinner" value="gala_dinner"><label for="gala_dinner"> Gala Dinner & Awards Ceremony (Wednesday, August 1)</label><br><br>
+				 
+					</fieldset>
+					 
+					<fieldset>
+						<legend>ACCOMMODATION AND TOURS</legend>
+						<p>Please note  that each participant shall take care of the hotel reservations by contacting  the hotels directly. Additional information on the accommodation options is  available on the conference website (<a href="http://www.icee2012.fi"> www.icee2012.fi</a>).</p>
+						<p>Optional  tours and visits will be offered to conference participants during the event.  Most tours will take place on the workshop day, Thursday August 2. The tours  and visits are not included into the conference fee and each participant  interested in these opportunities shall register and pay the preferred options  using a separate registration form. Additional information on the trips and  visits and a link to the registration form are available on the conference  website (<a href="http://www.icee2012.fi">www.icee2012.fi</a>).</p><br>
+					</fieldset>
+					
+					<fieldset>
+						<input type="submit" value="SUBMIT & PROCEED TO THE NEXT PHASE..." />
+					</fieldset>
+					</form>
+					
+				</section>		
+			</section>
+		  					
+		<footer>
+			<!-- footer content -->
+		<section id="footer_left">
+			<h2>Hidden heading</h2>
+			<section class="left">
+				<h2>Hidden heading</h2>
+				<p>
+					<b>Conference Chair</b><br>Dr. Olli Mertanen
+				</p>
+			</section>
+			
+				<section class="middle">
+					<h2>Hidden heading</h2>
+					<p>
+						<b>Organization Committee Chair</b><br>Dr. Janne Roslöf
+					</p>
+				</section>
+			
+			<section class="right">
+					<h2>Hidden heading</h2>
+					<p>
+						<b>Further information</b><br><a href="mailto:info@icee2012.fi">info@icee2012.fi</a>
+					</p>
+			</section>
+			
+			
+		</section>	
+		
+		
+		<section id="footer_right">
+			<h2>Hidden heading</h2>
+			<a href="http://www.tucs.fi"><img class="thumbnail" src="images/tucs_logo.png" alt="TUCS logo" width="120" height="60"></a>
+			<a href="http://turkuamk.fi"><img class="thumbnail" src="images/turunamk_logo.png" alt="Turun AMK logo" width="140" height="50"></a>
+			<a href="http://www.ineer.org"><img class="thumbnail" src="images/ineer_logo.png" alt="INEER logo" width="60" height="60"></a>
+			
+		</section>
+		  </footer>	
+		  
+		 
+		</body>
+</html>
